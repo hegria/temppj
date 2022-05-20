@@ -8,8 +8,17 @@
   },
   "author": "",
   "license": "ISC",
+  "homepage": "https://hegria.github.io/temppj/",
   "dependencies": {
     "fs": "^0.0.1-security",
-    "http": "^0.0.1-security"
+    "http": "^0.0.1-security",
+    "spotify-web-api-js": "^1.5.2",
+    "spotify-web-api-node": "^5.0.2"
+  },
+  "scrpits": {
+    "deploy": "npm run build&&gh-pages -d build"
+  },
+  "devDependencies": {
+    "gh-pages": "^4.0.0"
   }
 }

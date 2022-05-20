@@ -1,9 +1,24 @@
 
 var accessToken = 'BQAXup0h-AyHC9BktgpuHVwxigPfkpH6f6pQDdxm_fqtaW5Y47KaFMxV2FtuJzeviAuUE6hZDUTiXJE2_kgUWMdGVmrZ0c5rBH7sjhvC-oHopl_9hvWvPHOhqV5lzYUPgXtYHcCTX_WF-dWBuvS4QZzuWy4ijZYZAvw4A3y_5Nt7';
 
+var SpotifyWebApi = require('spotify-web-api-node');
 
 
-function getPlaylist() {
+var scopes = ['playlist-modify-public', 'playlist-read-public'],
+  redirectUri = 'https://hegria.github.io/temppj/',
+  clientId = '70becd8a2c0744a8b7bd5ff888f92ad2',
+  state = 'some-state-of-my-choice';
+
+var spotifyApi = new SpotifyWebApi({
+    clientId: '70becd8a2c0744a8b7bd5ff888f92ad2',
+    clientSecreet: '089ccf75b7fc4282aa893b9dc3375038',
+    redirectUri: 'https://hegria.github.io/temppj/'
+    }
+);
+accessToken = spotifyApi.getAccessToken();
+
+
+// function getPlaylist() {
 
     let duration = parseInt(localStorage.getItem("duration"));
 
@@ -109,4 +124,4 @@ function getPlaylist() {
         })
     }
     );
-}
+// }
