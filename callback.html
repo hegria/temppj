@@ -4,9 +4,12 @@
 </head>
 <body>
     <script>
+
         token = window.location.hash.substr(1).split('&')[0].split("=")[1]
-        console.log(token);
-        console.log(window.opener);
+        
+        if(window.open ===null)
+            window.opener = window.open('',"parent");
+        
         if (token) {
             window.opener.spotifyCallback(token)
         }
