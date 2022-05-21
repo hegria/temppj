@@ -1,6 +1,6 @@
 
 var accessToken = 'BQAXup0h-AyHC9BktgpuHVwxigPfkpH6f6pQDdxm_fqtaW5Y47KaFMxV2FtuJzeviAuUE6hZDUTiXJE2_kgUWMdGVmrZ0c5rBH7sjhvC-oHopl_9hvWvPHOhqV5lzYUPgXtYHcCTX_WF-dWBuvS4QZzuWy4ijZYZAvw4A3y_5Nt7';
-let url = 'https://accounts.spotify.com/authorize?client_id=70becd8a2c0744a8b7bd5ff888f92ad2&response_type=token&redirect_uri=https://hegria.github.io/temppj/&show_dialog=true&scope=playlist-modify-public%20playlist-read-public';
+let url = 'https://accounts.spotify.com/authorize?client_id=70becd8a2c0744a8b7bd5ff888f92ad2&response_type=token&redirect_uri=https://hegria.github.io/temppj/&show_dialog=true&scope=playlist-modify-public%20playlist-read-collaborative';
 
 
 gettoken();
