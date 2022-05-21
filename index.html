@@ -81,29 +81,26 @@ let url = 'https://accounts.spotify.com/authorize?client_id=70becd8a2c0744a8b7bd
 gettoken();
 
 function gettoken(){
-    window.name = "parent"
-    let popup = window.open(url,'Login with Spotify','width=800,height=600');
     
-}
-
-function spotifyCallback(payload){
-        
-    console.log(payload);
-    return;
-    // fetch('https://api.spotify.com/v1/me', {
-    // headers: {
-    // 'Authorization': `Bearer ${payload}`
-    // }
-    // }).then(response => {
-    // return response.json()
-    // }).then(data => {
-    //     var hash = window.location.hash.substring(1);
-    //     var accessString = hash.indexOf("&");
-        
-    //     /* 13 because that bypasses 'access_token' string */
-    //     access_token = hash.substring(13, accessString);
-    //     console.log("Access Token: " + access_token);
-    // })
+    let popup = window.open(url,'Login with Spotify','width=800,height=600');
+    popup.onbeforeunload = function() {
+        var accessToken = localStorage.getItem('accessToken');
+        console.log(accessToken);
+        // fetch('https://api.spotify.com/v1/me', {
+        // headers: {
+        // 'Authorization': `Bearer ${payload}`
+        // }
+        // }).then(response => {
+        // return response.json()
+        // }).then(data => {
+        //     var hash = window.location.hash.substring(1);
+        //     var accessString = hash.indexOf("&");
+            
+        //     /* 13 because that bypasses 'access_token' string */
+        //     access_token = hash.substring(13, accessString);
+        //     console.log("Access Token: " + access_token);
+        // })
+    }
 }
 
 
