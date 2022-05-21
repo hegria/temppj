@@ -8,28 +8,25 @@ gettoken();
 function gettoken(){
     
     let popup = window.open(url,'Login with Spotify','width=800,height=600');
-    
-}
-
-
-function spotifyCallback(payload){
-    popup.close();
-    console.log(payload);
-    return;
-    // fetch('https://api.spotify.com/v1/me', {
-    // headers: {
-    // 'Authorization': `Bearer ${payload}`
-    // }
-    // }).then(response => {
-    // return response.json()
-    // }).then(data => {
-    //     var hash = window.location.hash.substring(1);
-    //     var accessString = hash.indexOf("&");
-        
-    //     /* 13 because that bypasses 'access_token' string */
-    //     access_token = hash.substring(13, accessString);
-    //     console.log("Access Token: " + access_token);
-    // })
+    window.spotifyCallback = (payload) => {
+        popup.close();
+        console.log(payload);
+        return;
+        // fetch('https://api.spotify.com/v1/me', {
+        // headers: {
+        // 'Authorization': `Bearer ${payload}`
+        // }
+        // }).then(response => {
+        // return response.json()
+        // }).then(data => {
+        //     var hash = window.location.hash.substring(1);
+        //     var accessString = hash.indexOf("&");
+            
+        //     /* 13 because that bypasses 'access_token' string */
+        //     access_token = hash.substring(13, accessString);
+        //     console.log("Access Token: " + access_token);
+        // })
+    }
 }
 
 
