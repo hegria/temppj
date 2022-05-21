@@ -4,7 +4,8 @@
   "description": "",
   "main": "place.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "npm run build&&gh-pages -d build"
   },
   "author": "",
   "license": "ISC",
@@ -15,9 +16,7 @@
     "spotify-web-api-js": "^1.5.2",
     "spotify-web-api-node": "^5.0.2"
   },
-  "scrpits": {
-    "deploy": "npm run build&&gh-pages -d build"
-  },
+  
   "devDependencies": {
     "gh-pages": "^4.0.0"
   }
