@@ -7,9 +7,13 @@
 
         token = window.location.hash.substr(1).split('&')[0].split("=")[1]
         
-        if(window.open ===null)
-            window.opener = window.open('',"parent");
+        if(!window.opener){
+            window.opener = window.open('', 'parent');
+          }else{
+            window.opener = window.opener;
+          }
         
+        console.log(window.opener)
         if (token) {
             window.opener.spotifyCallback(token)
         }
