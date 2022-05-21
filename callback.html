@@ -5,9 +5,13 @@
 <body>
     <script>
         token = window.location.hash.substr(1).split('&')[0].split("=")[1]
+        console.log(token);
+        console.log(window.opener);
         if (token) {
             window.opener.spotifyCallback(token)
         }
+
+        window.close();
     </script>
     </body>
 </html>
