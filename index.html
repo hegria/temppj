@@ -106,8 +106,7 @@ function gettoken(){
         alert("팝업 차단을 해제해주세요!!");
     }
     
-    
-    출처: https://regexr.tistory.com/48 [Regular expression]
+
     let popup = window.open(url,'Login with Spotify','width=800,height=600');
     popup.onbeforeunload = function() {
         var accessToken = localStorage.getItem('accessToken');
