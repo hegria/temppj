@@ -100,14 +100,14 @@ function gettoken(){
         return false;
     };
      
-     
-    var popup = window.open('https://www.google.com', '_blank');
+    
+    
+
+    popup = window.open(url,'Login with Spotify','width=800,height=600');
     if (isPopupBlockerActivated(popup)) {
         alert("팝업 차단을 해제해주세요!!");
     }
     
-
-    popup = window.open(url,'Login with Spotify','width=800,height=600');
     popup.onbeforeunload = function() {
         var accessToken = localStorage.getItem('accessToken');
         console.log(accessToken);
