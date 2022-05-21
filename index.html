@@ -74,46 +74,7 @@ function displayMarker(place) {
         </script>
         <script>
             
-var accessToken = 'BQAXup0h-AyHC9BktgpuHVwxigPfkpH6f6pQDdxm_fqtaW5Y47KaFMxV2FtuJzeviAuUE6hZDUTiXJE2_kgUWMdGVmrZ0c5rBH7sjhvC-oHopl_9hvWvPHOhqV5lzYUPgXtYHcCTX_WF-dWBuvS4QZzuWy4ijZYZAvw4A3y_5Nt7';
-let url = 'https://accounts.spotify.com/authorize?client_id=70becd8a2c0744a8b7bd5ff888f92ad2&response_type=token&redirect_uri=https://hegria.github.io/temppj/callback&scope=playlist-modify-public%20playlist-read-collaborative';
 
-
-gettoken();
-
-function gettoken(){
-    var isPopupBlockerActivated = function(popupWindow) {
-        if (popupWindow) {
-            if (/chrome/.test(navigator.userAgent.toLowerCase())) {
-                try {
-                    popupWindow.focus();
-                } catch (e) {
-                    return true;
-                }
-            } else {
-                popupWindow.onload = function() {
-                    return (popupWindow.innerHeight > 0) === false;
-                };
-            }
-        } else {
-            return true;
-        }
-        return false;
-    };
-     
-    
-    
-
-    popup = window.open(url,'Login with Spotify','width=800,height=600');
-    if (isPopupBlockerActivated(popup)) {
-        alert("팝업 차단을 해제해주세요!!");
-    }
-    
-    popup.onbeforeunload = function() {
-        var accessToken = localStorage.getItem('accessToken');
-        console.log(accessToken);
-        
-    }
-}
 
 
 
