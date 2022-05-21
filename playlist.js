@@ -8,7 +8,7 @@ gettoken();
 function gettoken(){
     
     let popup = window.open(url,'Login with Spotify','width=800,height=600');
-    window.callback = (payload) => {
+    window.spotifyCallback = (payload) => {
         popup.close();
         console.log(payload);
         return;
