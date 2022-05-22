@@ -24,7 +24,7 @@ function gettoken(){
     };
      
     
-    let url = 'https://accounts.spotify.com/authorize?client_id=70becd8a2c0744a8b7bd5ff888f92ad2&response_type=token&redirect_uri=https://hegria.github.io/temppj/callback&scope=user-read-email%20user-read-private%20playlist-modify-public%20playlist-read-collaborative';
+    let url = 'https://accounts.spotify.com/authorize?client_id=70becd8a2c0744a8b7bd5ff888f92ad2&response_type=token&redirect_uri=https://hegria.github.io/temppj/callback&scope=playlist-modify-public%20playlist-read-collaborative';
 
     popup = window.open(url,'Login with Spotify','width=800,height=600');
     if (isPopupBlockerActivated(popup)) {
@@ -88,21 +88,25 @@ function gettoken(){
             'Content-Type': 'application/json',
             'Authorization': 'Bearer ' + accessToken
         },
-    }).then((response) =>
+    }).then((response) => {
+        console.log(response);
         response.json()
+    }
     ).then((data)=>{
         user_id = data['id'];
         //노래 받아오기
-    fetch('https://api.spotify.com/v1/recommendations?' + query, {
-        method: 'GET',
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-            'Authorization': 'Bearer ' + accessToken
-        },
-    }
-    ).then((response) =>
-        response.json()
+        fetch('https://api.spotify.com/v1/recommendations?' + query, {
+            method: 'GET',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + accessToken
+            },
+        }
+        ).then((response) => {
+            console.log(response);
+            response.json();
+        }
     ).then((data) => {
     
         console.log(data);
