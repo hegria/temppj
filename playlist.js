@@ -24,7 +24,7 @@ function gettoken(){
     };
      
     
-    
+    let url = 'https://accounts.spotify.com/authorize?client_id=70becd8a2c0744a8b7bd5ff888f92ad2&response_type=token&redirect_uri=https://skychoi1010.github.io/SKKU-OSS-TEAM20/callback&scope=user-read-email%20user-read-private%20playlist-modify-public%20playlist-read-collaborative';
 
     popup = window.open(url,'Login with Spotify','width=800,height=600');
     if (isPopupBlockerActivated(popup)) {
