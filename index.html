@@ -7,13 +7,14 @@
 </head>
 <body>
         <div id="map" style="width:100%;height:350px;"></div>
+        <button type="button" onclick="getmap()">클릭해 보세요!</button>
         <script src="playlist.js"></script>
         <!-- <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=409808e22e221a79684b538497ac9747"></script> -->
         <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=409808e22e221a79684b538497ac9747&libraries=services,places"></script>
 
         <script>
             
-
+function getmap(){
 // 마커를 클릭하면 장소명을 표출할 인포윈도우 입니다
 var infowindow = new kakao.maps.InfoWindow({zIndex:1});
 
@@ -70,6 +71,7 @@ function displayMarker(place) {
         infowindow.setContent('<div style="padding:5px;font-size:12px;">' + place.place_name + '</div>');
         infowindow.open(map, marker);
     });
+}
 }
         </script>
     </body>
